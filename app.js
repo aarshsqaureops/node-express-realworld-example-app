@@ -33,7 +33,7 @@ if (!isProduction) {
 if(isProduction){
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect('mongodb://localhost/conduit');
+  mongoose.connect('mongodb://admin:password@IPadress1:27017,IPadress2:27017,IPadress3:27017/conduit?authSource=admin&replicaSet=rs10');
   mongoose.set('debug', true);
 }
 
