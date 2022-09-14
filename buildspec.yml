@@ -1,0 +1,22 @@
+version: 0.2
+
+run-as: root
+
+
+phases:
+   pre_build:
+     commands:
+       - apt update && sudo apt upgrade -y
+       - apt install nodejs nginx -y
+       - npm install npm@latest -g
+       - npm install pm2@latest -g
+
+   build:
+     commands:
+        - echo "build application"
+       
+
+artifacts:
+  files:
+    - echo "Upload artifact to bucket for deploy"
+    - '**/*'
