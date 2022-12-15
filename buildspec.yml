@@ -2,18 +2,16 @@ version: 0.2
 
 run-as: root
 
+env:
+        parameter-store:
+                mongo_url: "aarsh"
 
 phases:
-   pre_build:
-     commands:
-       - echo "mongodb-url-aarsh=$mongodb-url-aarsh" > .env
-
-   build:
-     commands:
-        - echo "build application"
-       
-
+        build:
+                commands:
+                        - sed -i "s|mongodb://localhost/conduit|$mongo_url|" app.js
+                        - cat app.js
 artifacts:
-  files:
-    - echo "Upload artifact to bucket for deploy"
-    - '**/*'
+        files:
+                - '**/*'
+                - echo "Build Artifacts created successfully"
