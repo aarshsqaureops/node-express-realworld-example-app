@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "Nothing to stop! Restarting codedeploy agent"
-sudo systemctl restart codedeploy-agent
+echo "Nothing to stop!"
+#sudo systemctl restart codedeploy-agent
