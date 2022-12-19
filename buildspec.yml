@@ -7,6 +7,10 @@ env:
                 mongo_url: "aarsh"
 
 phases:
+        pre_build:
+                commands:
+                        - npm install
+                        
         build:
                 commands:
                         - sed -i "s|mongodb://localhost/conduit|$mongo_url|" app.js
